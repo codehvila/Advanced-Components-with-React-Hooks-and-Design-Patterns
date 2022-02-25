@@ -1,5 +1,7 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Wizard from "./components/Wizard";
+import { Page1, Page2, Page3 } from "./components/Pages";
 
 function App() {
   return (
@@ -18,6 +20,13 @@ function App() {
           Learn React
         </a>
       </header>
+      <main className="App-main">
+        <Wizard>
+          <Page1 />
+          <Page2 />
+          <Page3 />
+        </Wizard>
+      </main>
     </div>
   );
 }
