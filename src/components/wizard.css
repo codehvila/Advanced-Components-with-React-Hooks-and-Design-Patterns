@@ -1,4 +1,5 @@
 .wizard {
+  min-height: 50vh;
   max-width: 650px;
   width: 90%;
   margin: 4rem auto 0;

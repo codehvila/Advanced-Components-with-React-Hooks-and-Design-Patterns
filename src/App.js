@@ -2,6 +2,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import Wizard from "./components/Wizard";
 import { Page1, Page2, Page3 } from "./components/Pages";
+import WizardButtonNext from "./components/WizardButtonNext";
+import WizardButtonPrev from "./components/WizardButtonPrev";
+import WizardPages from "./components/WizardPages";
 
 function App() {
   return (
@@ -21,10 +24,16 @@ function App() {
         </a>
       </header>
       <main className="App-main">
-        <Wizard>
-          <Page1 />
-          <Page2 />
-          <Page3 />
+        <Wizard steps={3}>
+          <WizardPages className="wizard__content">
+            <Page1 />
+            <Page2 />
+            <Page3 />
+          </WizardPages>
+          <div className="wizard__button">
+            <WizardButtonPrev className="wizard__buttons-left" />
+            <WizardButtonNext className="wizard__buttons-right" />
+          </div>
         </Wizard>
       </main>
     </div>

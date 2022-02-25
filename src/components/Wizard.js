@@ -1,11 +1,10 @@
-import { useState, Children } from "react";
+import { useState, createContext } from "react";
 import "./wizard.css";
 
-const Wizard = ({ children }) => {
-  const [activePage, setActivePage] = useState(0);
+export const WizardContext = createContext();
 
-  const pages = Children.toArray(children);
-  const currentPage = pages[activePage];
+const Wizard = ({ children, steps }) => {
+  const [activePage, setActivePage] = useState(0);
 
   const handleGoPrevPageClick = () => {
     setActivePage((index) => index - 1);
@@ -14,30 +13,17 @@ const Wizard = ({ children }) => {
     setActivePage((index) => index + 1);
   };
 
+  const context = {
+    activePage,
+    handleGoNextPageClick,
+    handleGoPrevPageClick,
+    steps,
+  };
+
   return (
-    <div className="wizard">
-      <div className="wizard__content">{currentPage}</div>
-      <div className="wizard__buttons">
-        {activePage > 0 ? (
-          <button
-            onClick={handleGoPrevPageClick}
-            type="button"
-            className="wizard__buttons-left"
-          >
-            Atras
-          </button>
-        ) : null}
-        {activePage < pages.length - 1 ? (
-          <button
-            onClick={handleGoNextPageClick}
-            type="button"
-            className="wizard__buttons-right"
-          >
-            Siguiente
-          </button>
-        ) : null}
-      </div>
-    </div>
+    <WizardContext.Provider value={context}>
+      <div className="wizard">{children}</div>
+    </WizardContext.Provider>
   );
 };
 
