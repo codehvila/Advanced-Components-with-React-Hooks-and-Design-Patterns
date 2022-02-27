@@ -1,9 +1,10 @@
-import { useContext } from "react";
-import { WizardContext } from "./Wizard";
+import { useWizardContext } from "../hooks/useWizardContext";
 
 const WizardButtonNext = (props) => {
-  const { handleGoNextPageClick, activePage, steps } =
-    useContext(WizardContext);
+  const { handleGoNextPageClick, activePage, steps } = useWizardContext(
+    "WizardButtonNext",
+    "Wizard"
+  );
 
   return (
     <>

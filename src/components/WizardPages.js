@@ -1,8 +1,8 @@
-import { useContext, Children } from "react";
-import { WizardContext } from "./Wizard";
+import { Children } from "react";
+import { useWizardContext } from "../hooks/useWizardContext";
 
 const WizardPages = (props) => {
-  const { activePage } = useContext(WizardContext);
+  const { activePage } = useWizardContext("WizardPages", "Wizard");
   const pages = Children.toArray(props.children);
   const currentPage = pages[activePage];
   return <div {...props}>{currentPage}</div>;
