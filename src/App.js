@@ -24,7 +24,7 @@ function App() {
         </a>
       </header>
       <main className="App-main">
-        <Wizard steps={3}>
+        <Wizard>
           <WizardPages className="wizard__content">
             <Page1 />
             <Page2 />

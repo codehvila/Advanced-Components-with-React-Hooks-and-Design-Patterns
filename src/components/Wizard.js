@@ -3,8 +3,9 @@ import "./wizard.css";
 
 export const WizardContext = createContext();
 
-const Wizard = ({ children, steps }) => {
+const Wizard = ({ children }) => {
   const [activePage, setActivePage] = useState(0);
+  const [steps, setSteps] = useState(0);
 
   const handleGoPrevPageClick = () => {
     setActivePage((index) => index - 1);
@@ -17,6 +18,7 @@ const Wizard = ({ children, steps }) => {
     activePage,
     handleGoNextPageClick,
     handleGoPrevPageClick,
+    setSteps,
     steps,
   };
 
