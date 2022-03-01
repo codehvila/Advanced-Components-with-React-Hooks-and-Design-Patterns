@@ -10,7 +10,7 @@ const WizardButtonNext = (props) => {
     <>
       {activePage < steps - 1 ? (
         <button onClick={handleGoNextPageClick} type="button" {...props}>
-          Siguiente
+          {props.children}
         </button>
       ) : null}
     </>

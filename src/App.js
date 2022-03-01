@@ -31,8 +31,12 @@ function App() {
             <Page3 />
           </WizardPages>
           <div className="wizard__button">
-            <WizardButtonPrev className="wizard__buttons-left" />
-            <WizardButtonNext className="wizard__buttons-right" />
+            <WizardButtonPrev className="wizard__buttons-left">
+              Atras
+            </WizardButtonPrev>
+            <WizardButtonNext className="wizard__buttons-right">
+              Siguiente
+            </WizardButtonNext>
           </div>
         </Wizard>
       </main>

@@ -10,7 +10,7 @@ const WizardButtonPrev = (props) => {
     <>
       {activePage > 0 ? (
         <button onClick={handleGoPrevPageClick} type="button" {...props}>
-          Atras
+          {props.children}
         </button>
       ) : null}
     </>
